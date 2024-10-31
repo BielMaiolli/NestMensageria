@@ -42,6 +42,15 @@ Obs: Para realizar o teste sem cache comente na controller "@UseInterceptors(Cac
 Sobre Cluster:
 - autocannon -c 100 -d 20 http://localhost:3000
 
+Adicionando a mensageria:
+
+- docker run -d --hostname my-rabbit --name some-rabbit -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+- npm install @golevelup/nestjs-rabbitmq amqplib
+
+obs: talvez seja necessario atualizar a serve-static
+- npm install @nestjs/serve-static@latest
+
+
 Referencias para realização:
 
 https://www.youtube.com/watch?v=4oLUddZVL80&list=PLdAEGQHOerPAMLdJim5Peryj6_2Q-477Z
